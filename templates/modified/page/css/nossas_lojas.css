@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/* tamanho default da pagina
+.main_lojas_address {
+  max-width: 80rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}*/
+
+/* padrão de display para desktop */
+.titulo_lojas,
+.loja,
+.menu_lojas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* titulo da pagina lojas*/
+.titulo_lojas {
+  flex-direction: column;
+  margin: 1rem 0 3rem 0;
+}
+.titulo_lojas h3 {
+  font-family: 'Outfit', sans-serif;
+  font-style: normal;
+  font-size: 2.3rem;
+  margin: 0 0 0.5rem 0;
+}
+.titulo_lojas p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1rem;
+}
+
+/* tamanho padrão para img*/
+.slide li img,
+.slide_2 li img,
+.slide_3 li img,
+.slide_4 li img {
+  display: block;
+  max-width: 100%;
+}
+
+/* menu para selecionar o endereço */
+.menu_lojas {
+  margin: 0 0 3rem 0;
+}
+
+/* "loja_button" - classe de botões para selecionar a loja a ser feito o display na tela*/
+.loja_button {
+  font-size: 1rem;
+  font-family: 'Outfit', sans-serif;
+  cursor: pointer;
+  border: none;
+  min-width: 8rem;
+  border-radius: 0.4rem;
+  background: #6244bb;
+  color: #fff;
+  padding: 0.8rem 1.2rem;
+  box-sizing: border-box;
+  transition: all 0.5s;
+  display: inline-block;
+  position: relative;
+  margin: 0 0 0 1rem;
+}
+
+/*--elemento a ser mostrado pelo hover--*/
+.loja_button:after {
+  content: '»';
+  color: #fff;
+  font-size: 20px;
+  position: absolute;
+  opacity: 0;
+  top: 0.6rem;
+  right: -20px;
+  transition: 0.5s;
+}
+/*-- redução de tamanho no button pelo hover--*/
+.loja_button:focus,
+.loja_button:hover {
+  padding-right: 45px;
+  padding-left: 18px;
+}
+.loja_button:hover:after {
+  opacity: 1;
+  right: 18px;
+}
+.loja_button.ativo {
+  background: #9e82f1;
+}
+
+/* texto da pagina */
+.texto_loja {
+  margin: 0 0 0 8px;
+}
+.texto_loja_mobile {
+  display: none;
+}
+.texto_loja_mobile p,
+.texto_loja p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1rem;
+  text-align: left !important;
+}
+/* icones da area de texto */
+.texto_loja .fa-location-dot,
+.texto_loja .fa-clock,
+.texto_loja .fa-square-parking,
+.texto_loja .fa-envelope,
+.texto_loja .fa-phone,
+.texto_loja_mobile .fa-location-dot,
+.texto_loja_mobile .fa-clock,
+.texto_loja_mobile .fa-square-parking,
+.texto_loja_mobile .fa-envelope,
+.texto_loja_mobile .fa-phone {
+  margin: 8px 8px 0 0;
+  padding: 10px;
+  background-color: #6244bb;
+  color: #fff;
+  border-radius: 5px;
+}
+.texto_loja_mobile .fa-location-dot,
+.texto_loja .fa-location-dot {
+  padding: 10px 12px;
+}
+.texto_loja_mobile .fa-square-parking,
+.texto_loja .fa-square-parking {
+  padding: 10px 11px;
+}
+.texto_loja_mobile p a,
+.texto_loja p a {
+  text-decoration: none;
+  color: #000;
+}
+
+/*Botão para o whatsapp de cada loja*/
+.flex_loja {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem;
+}
+.wpp_lojas {
+  font-size: 1.6rem;
+  font-family: 'Outfit', sans-serif;
+  cursor: pointer;
+  border: none;
+  min-width: 4rem;
+  border-radius: 5rem;
+  background: #25d366;
+  color: #fff;
+  padding: 1rem;
+  box-sizing: border-box;
+  transition: all 0.5s;
+  display: inline-block;
+  position: relative;
+  margin: 0 0 0 1rem;
+}
+.wpp_lojas a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/*--elemento a ser mostrado pelo hover--*/
+.wpp_lojas:after {
+  content: 'Entre em contato';
+  color: #fff;
+  font-size: 1rem;
+  position: absolute;
+  opacity: 0;
+  top: 1.3rem;
+  right: -20px;
+  transition: 0.5s;
+}
+/*-- redução de tamanho no button pelo hover--*/
+.wpp_lojas:focus,
+.wpp_lojas:hover {
+  padding-right: 9rem;
+  padding-left: 18px;
+}
+.wpp_lojas:hover:after {
+  opacity: 1;
+  right: 18px;
+}
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+/* animação de transição para as guias de endereço*/
+.animeLeft {
+  transform: translateX(-20px);
+  opacity: 0;
+  animation: animeLeft 0.5s forwards;
+}
+@keyframes animeLeft {
+  to {
+    transform: initial;
+    opacity: 1;
+  }
+}
+
+/* responsivo para mobile*/
+@media (max-width: 768px) {
+  .menu_lojas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  .texto_loja {
+    display: none;
+  }
+  .loja {
+    flex-direction: column;
+  }
+  .texto_loja_mobile {
+    display: block;
+    margin: 1rem 0;
+  }
+  /* tamanho padrão para img*/
+  .slide li img,
+  .slide_2 li img,
+  .slide_3 li img,
+  .slide_4 li img {
+    display: block;
+    max-width: 100%;
+  }
+}
