@@ -77,9 +77,12 @@
                                                 <p class="font-small">
                                                     {% include "snipplets/svg/truck.tpl" with {svg_custom_class: "icon-inline mr-1 icon-w svg-icon-text"} %} {{'Envío' | translate}}: <strong> {{ (order.shipping_status == 'fulfilled'? 'Enviado' : 'No enviado') | translate }} </strong>
                                                 </p>
+                                                {% set value = order.total * 0.5 %}
+                                                
                                                 <h4 class="m-0 mt-4">
                                                     <strong>{{'Total' | translate}}</strong> {{ order.total | money }}
                                                 </h4>
+                                                <h5 class="m-0 mt-2"><strong>Valor de Custo:</strong> {{value|money}}</h5>
                                                 <a class="btn-link font-small" href="{{ store.customer_order_url(order) }}">{{'Ver detalle >' | translate}}</a>
                                             </div>
 

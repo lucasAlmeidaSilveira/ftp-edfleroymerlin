@@ -118,9 +118,10 @@
                             <strong class="font-small">{{ 'Subtotal' | translate }}:</strong>
                             {{ order.subtotal | money }}
                         </p>
-                    {% endif %}  
-                    
-                    <h3>{{ 'Total' | translate }}: {{ order.total | money }}</h3>
+                    {% endif %}
+                    {% set value = order.total * 0.5 %}
+                    <h3><strong>Valor de Custo:</strong> {{value|money}}</h3>
+                    <h3><strong>{{ 'Total' | translate }}</strong>: {{ order.total | money }}</h3>
                     {% if order.pending %}
                         <a class="btn btn-primary mt-2 d-block col col-md-4" href="{{ order.checkout_url | add_param('ref', 'orders_details') }}" target="_blank">{{ 'Realizar el pago' | translate }}</a>
                     {% endif %}
